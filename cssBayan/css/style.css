@@ -58,17 +58,36 @@ body {
     max-height: 0;
     max-width: 95%;
     overflow: hidden;
-    font-weight: normal;
-    transition: max-height 0.5s linear;
+    transition: all 2s linear;
 }
 
 .bayan-mem {
-    padding-top: 0.5em;
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90%;
+}
+
+.pic1 {
+    background-image: url('/cssBayan/assets/ProgrammingMemes.jpg');
+}
+
+.pic2 {
+    background-image: url('/cssBayan/assets/ProgrammersProblem.jpg');
+}
+
+.pic3 {
+    background-image: url('/cssBayan/assets/ProgrammersGoogling.jpg');
+}
+
+.pic4 {
+    background-image: url('/cssBayan/assets/JuniorvsSenior.jpg');
 }
 
 input[type="radio"]:checked ~ .bayan-body {
-    max-height: 100vh;
-    transition: max-height 4s linear;
+    max-height: 100%;
+    transition: all 2s linear;
 }
 
 input[type="radio"]:checked + .bayan-btn > .icon {
@@ -89,8 +108,8 @@ input[type="radio"]:checked + .bayan-btn {
 
 @media (hover: hover) and (pointer: fine) {
     .bayan-element:hover > .bayan-body {
-        max-height: 100vh;
-        transition: max-height 4s linear;
+        max-height: 100%;
+        transition: all 2s linear;
     }
     
     .bayan-element:hover .icon {
