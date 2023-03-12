@@ -45,7 +45,7 @@ body {
     display: none;
     width: 1em;
     height: 1em;
-    background: url('/cssBayan/assets/icon.svg') no-repeat center;
+    background: url('../assets/icon.svg') no-repeat center;
 }
 
 .bayan-element > input[type="radio"] {
