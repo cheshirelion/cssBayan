@@ -26,11 +26,12 @@ body {
 }
 
 .bayan-element {
+    padding: 0.5em 0;
     border-bottom: 0.07em solid rgb(192, 183, 183);
     cursor: pointer;
 }
 
-label {
+.bayan-btn {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -38,9 +39,9 @@ label {
 
 .icon {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    background: url('/cssBayan/assets/icon.svg');
+    width: 1em;
+    height: 1em;
+    background: url('/cssBayan/assets/icon.svg') no-repeat center;
 }
 
 .bayan-element > input[type="radio"] {
@@ -49,19 +50,32 @@ label {
     opacity: 0;
 }
 
-.bayan-mem {
+.bayan-body {
     max-height: 0;
     overflow: hidden;
     font-weight: normal;
-    transition: 0.4s;
+    transition: all 0.5s linear;
 }
 
-input[type="radio"]:checked ~ .bayan-mem {
+.bayan-mem {
+    padding-top: 0.5em;
+}
+
+input[type="radio"]:checked ~ .bayan-body {
+    max-height: 2000px;
+    transition: all 8s linear;
+}
+
+input[type="radio"]:checked + .bayan-btn > .icon {
+    transform: rotate(45deg) !important;
+}
+
+.bayan-element:hover > .bayan-body {
     max-height: 2000px;
     transition: 8s;
 }
 
-.bayan-element:hover > .bayan-mem {
-    max-height: 2000px;
-    transition: 8s;
+.bayan-element:hover .icon {
+    transform: rotate(45deg) !important;
+    transition: all 0.2s linear;
 }
