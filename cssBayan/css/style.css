@@ -70,19 +70,19 @@ body {
 }
 
 .pic1 {
-    background-image: url('/cssBayan/assets/ProgrammingMemes.jpg');
+    background-image: url('../assets/ProgrammingMemes.jpg');
 }
 
 .pic2 {
-    background-image: url('/cssBayan/assets/ProgrammersProblem.jpg');
+    background-image: url('../assets/ProgrammersProblem.jpg');
 }
 
 .pic3 {
-    background-image: url('/cssBayan/assets/ProgrammersGoogling.jpg');
+    background-image: url('../assets/ProgrammersGoogling.jpg');
 }
 
 .pic4 {
-    background-image: url('/cssBayan/assets/JuniorvsSenior.jpg');
+    background-image: url('../assets/JuniorvsSenior.jpg');
 }
 
 input[type="radio"]:checked ~ .bayan-body {
