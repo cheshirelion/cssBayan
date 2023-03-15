@@ -1,0 +1,142 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-weight: bold;
+}
+
+.wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+.bayan {
+    font-size: 0.6em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bayan-title {
+    border-bottom: 0.3vh solid rgb(192, 183, 183);
+    font-size: 1.5em;
+    color: rgb(30, 29, 29);
+}
+
+.bayan-element {
+    padding: 0.5em 0;
+    border-bottom: 0.3vh solid rgb(192, 183, 183);
+    cursor: pointer;
+}
+
+.bayan-btn {
+    display: flex;
+    justify-content: space-between;
+    color: rgb(60, 60, 234);
+    cursor: pointer;
+}
+
+.icon {
+    display: none;
+    width: 1em;
+    height: 1em;
+    background: url('../assets/icon.svg') no-repeat center;
+}
+
+.bayan-element > input[type="radio"] {
+    display: none;
+    z-index: -1;
+    opacity: 0;
+}
+
+.bayan-body {
+    max-height: 0;
+    max-width: 95%;
+    overflow: hidden;
+    transition: all 2s linear;
+}
+
+.bayan-mem {
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90%;
+}
+
+.pic1 {
+    background-image: url('../assets/ProgrammingMemes.jpg');
+}
+
+.pic2 {
+    background-image: url('../assets/ProgrammersProblem.jpg');
+}
+
+.pic3 {
+    background-image: url('../assets/ProgrammersGoogling.jpg');
+}
+
+.pic4 {
+    background-image: url('../assets/JuniorvsSenior.jpg');
+}
+
+input[type="radio"]:checked ~ .bayan-body {
+    max-height: 100%;
+    transition: all 2s linear;
+}
+
+input[type="radio"]:checked + .bayan-btn > .icon {
+    display: inline-block;
+    transform: rotate(45deg) !important;
+    transition: all 0.2s linear;
+}
+
+input[type="radio"]:checked + .bayan-btn {
+    color: rgb(30, 29, 29);
+}
+
+@media (hover: none) {
+    .icon {
+        display: inline-block;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .bayan-element:hover > .bayan-body {
+        max-height: 100%;
+        transition: all 2s linear;
+    }
+    
+    .bayan-element:hover .icon {
+        transform: rotate(45deg) !important;
+        transition: all 0.2s linear;
+    }
+
+    .bayan:hover .bayan-btn {
+        color: rgb(30, 29, 29);
+        transition: all 0.4s linear;
+    }
+
+    .bayan:hover .icon {
+        display: inline-block;
+        transition: all 0.4s linear;
+    }
+
+}
+
+@media (min-width: 700px) {
+    .bayan {
+        font-size: 1em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .bayan {
+        font-size: 1.5em;
+    }
+}
