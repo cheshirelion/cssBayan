@@ -3,12 +3,17 @@
     scroll-behavior: smooth;
 }
 
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
 body {
     font-weight: bold;
 }
 
 .wrapper {
-    width: 70%;
+    width: 50%;
     margin: 0 auto;
 }
 
@@ -29,23 +34,38 @@ body {
 }
 
 .bayan-element {
-    padding: 0.5em 0;
+    display: block;
+    height: 100%;
+    padding: 0.2em 0;
     border-bottom: 0.3vh solid rgb(192, 183, 183);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.bayan-btn {
+.bayan-element:active {
+    opacity: 0.5;
+}
+
+.header-meme {
     display: flex;
     justify-content: space-between;
     color: rgb(60, 60, 234);
     cursor: pointer;
 }
 
+.title-meme {
+    font-size: 1em;
+    margin: 0.2em 0;
+}
+
 .icon {
-    display: none;
+    display: flex;
+    align-self: center;
     width: 1em;
     height: 1em;
     background: url('../assets/icon.svg') no-repeat center;
+    opacity: 0;
+    transition: all 0.3s ease;
 }
 
 .bayan-element > input[type="radio"] {
@@ -54,79 +74,62 @@ body {
     opacity: 0;
 }
 
-.bayan-body {
-    max-height: 0;
-    max-width: 95%;
-    overflow: hidden;
-    transition: all 2s linear;
+.meme {
+    display: block;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
 }
 
-.bayan-mem {
-    width: 100%;
+input[type="radio"]:checked ~ .meme {
+    margin: 1em auto;
+    width: 70%;
     height: auto;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 90%;
+    opacity: 1;
+    transform: scale(1);
 }
 
-.pic1 {
-    background-image: url('/cssBayan/assets/ProgrammingMemes.jpg');
-}
-
-.pic2 {
-    background-image: url('/cssBayan/assets/ProgrammersProblem.jpg');
-}
-
-.pic3 {
-    background-image: url('/cssBayan/assets/ProgrammersGoogling.jpg');
-}
-
-.pic4 {
-    background-image: url('/cssBayan/assets/JuniorvsSenior.jpg');
-}
-
-input[type="radio"]:checked ~ .bayan-body {
-    max-height: 100%;
-    transition: all 2s linear;
-}
-
-input[type="radio"]:checked + .bayan-btn > .icon {
-    display: inline-block;
+input[type="radio"]:checked + .header-meme > .icon {
     transform: rotate(45deg) !important;
-    transition: all 0.2s linear;
+    opacity: 1;
 }
 
-input[type="radio"]:checked + .bayan-btn {
+input[type="radio"]:checked + .header-meme {
     color: rgb(30, 29, 29);
 }
 
 @media (hover: none) {
     .icon {
         display: inline-block;
+        opacity: 1;
     }
 }
 
 @media (hover: hover) and (pointer: fine) {
-    .bayan-element:hover > .bayan-body {
-        max-height: 100%;
-        transition: all 2s linear;
-    }
-    
-    .bayan-element:hover .icon {
-        transform: rotate(45deg) !important;
-        transition: all 0.2s linear;
+    .bayan-element:hover > .meme {
+        margin: 1em auto;
+        width: 70%;
+        height: auto;
+        opacity: 1;
+        transform: scale(1);
     }
 
-    .bayan:hover .bayan-btn {
+    .bayan-element:hover .icon {
+        transform: rotate(45deg) !important;
+        opacity: 1;
+    }
+
+    .bayan:hover .header-meme {
         color: rgb(30, 29, 29);
-        transition: all 0.4s linear;
     }
 
     .bayan:hover .icon {
         display: inline-block;
-        transition: all 0.4s linear;
+        opacity: 1;
     }
-
 }
 
 @media (min-width: 700px) {
